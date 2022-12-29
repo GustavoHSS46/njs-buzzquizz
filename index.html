@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="shortcut icon" href="#">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BuzzQuizz</title>
+    <link rel="stylesheet" href="lib/styles.css">
+    <link rel="stylesheet" href="lib/reset.css">
+    <script src="https://unpkg.com/axios/dist/axios.min.js" defer></script>
+    <script src="src/script.js" defer></script>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <div class="title">
+                <h1 onclick="telaInicial()">BuzzQuizz</h1>
+            </div>
+        </div>
+    </header>
+    
+    <section class="Page-1">
+        <!-- Page 1 -->
+
+        <div class="MyQuiz">
+            <h3>Você não criou nenhum quizz ainda :(</h3>
+            <button class="criar" onclick="criarButton()">Criar Quizz</button>
+        </div>
+
+        <div class="AllQuiz">
+            <h1 class="AllQuiz_h1">Todos os Quizzes</h1>
+        </div>
+    </section>
+
+    <section class="Page-2 hide">
+        <!-- Page 2 -->
+        <div class="containerPage2">
+            <h1>Comece pelo começo</h1>
+
+            <div class="inputs">
+                <input class="title"type="text" placeholder="Titulo do seu quizz">
+                <input class="url"type="text" placeholder="URL do seu quizz">
+                <input class="qtdPerguntas"type="text" placeholder="Quantidade de perguntas do quizz">
+                <input class="qtdNives"type="text" placeholder="Quantidade de níveis do quizz">
+            </div>
+
+            <button class="paraPerguntas">Prosseguir pra criar perguntas</button>
+        </div>
+
+
+    </section>
+
+
+
+
+
+
+
+
+</body>
+</html>
