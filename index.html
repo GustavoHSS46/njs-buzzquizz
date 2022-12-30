@@ -40,10 +40,10 @@
             <h1>Comece pelo começo</h1>
 
             <div class="inputs">
-                <input class="title"type="text" placeholder="Titulo do seu quizz">
-                <input class="url"type="text" placeholder="URL da imagem do seu quizz">
-                <input class="qtdPerguntas"type="text" placeholder="Quantidade de perguntas do quizz">
-                <input class="qtdNives"type="text" placeholder="Quantidade de níveis do quizz">
+                <input class="titleQuizz" type="text" placeholder="Titulo do seu quizz">
+                <input class="urlQuizz" type="text" placeholder="URL da imagem do seu quizz">
+                <input class="qtdPerguntasQuizz" type="number" placeholder="Quantidade de perguntas do quizz">
+                <input class="qtdNivesQuizz" type="number" placeholder="Quantidade de níveis do quizz">
             </div>
 
             <button class="paraPerguntas" onclick="perguntas()">Prosseguir pra criar perguntas</button>
@@ -54,25 +54,15 @@
 
 
     <section class="Page-2_Perguntas hide">
-        <!-- Page 2 -->
-        <div class="containerPage2">
+        <!--Page 2 Perguntas-->
+        <div class="containerPage2 hide">
             <h1>Crie suas perguntas</h1>
 
-            <div class="pergunta1">
-                <h1>Pergunta 1</h1>
-                <input type="text" placeholder="Texto da pergunta">
-                <input type="text" placeholder="Cor de fundo da pergunta">
-                <h1>Resposta correta</h1>
-                <input type="text" placeholder="Resposta correta">
-                <input type="text" placeholder="URL da imagem">
-                <h1>Respostas incorretas</h1>
-                <input type="text" placeholder="Resposta incorreta 1">
-                <input type="text" placeholder="URL da imagem 1">
-                <input type="text" placeholder="Resposta incorreta 2">
-                <input type="text" placeholder="URL da imagem 2">
-                <input type="text" placeholder="Resposta incorreta 3">
-                <input type="text" placeholder="URL da imagem 3">
+            <div class="contentPerguntas hide">
+
             </div>
+
+            
 
             <button class="paraPerguntas" onclick="perguntas()">Prosseguir pra criar perguntas</button>
         </div>
