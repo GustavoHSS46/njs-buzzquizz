@@ -58,6 +58,43 @@ body {
     background-color: var(--header-color);
 }
 
+.lettters span {
+    display: inline-block;
+
+	animation: jumper 5s ease-in-out infinite;
+
+	animation-delay: calc(0.1s * var(--i));
+}
+
+@keyframes jumper {
+
+	0% {
+
+		transform: translateY(0px);
+
+	}
+
+	5% {
+
+		transform: translateY(-10px);
+
+	}
+
+	10%, 50% {
+
+		transform: translateY(0px);
+
+	}
+
+}
+
+.lettters {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
 .title {
     height: 100%;
     width: 100%;
@@ -65,20 +102,17 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: row;
 
     transition: 300ms;
 }
 
-.title h1 {
+.title span {
     font-family: var(--font-family);
     font-size: var(--font-title-size);
     color: var(--font-color);
 
     cursor: pointer;
-}
-
-.title h1:hover {
-    opacity: 70%;
 }
 
 .MyQuiz {
@@ -99,7 +133,7 @@ body {
     margin-top: 1rem;
 
     border-radius: 50px;
-    border: 1px dashed #EC362D;
+    border: 2px dashed #EC362D;
     background-color: none;
 
     color: #EC362D;
@@ -111,6 +145,7 @@ body {
 
     cursor: pointer;
 }
+
 
 .MyQuiz h3 {
     font-family: var(--font-family);
@@ -139,21 +174,25 @@ body {
 .AllQuiz {
     margin: var(--margin);
 
-    height: 50%;
+    height: 55%;
     width: 80%;
 
     display: flex;
+    justify-content: center;
     flex-direction: row;
     flex-wrap: wrap;
 
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: scroll;
+
 }
 
 .card {
+
     margin: 0.75rem ;
 
     height: 159px;
-    width: 310px;
+    width: 30%;
 
     overflow: hidden;
 
@@ -271,7 +310,8 @@ body {
 
 
 .contentPerguntas {
-    overflow: scroll;
+    overflow-y: scroll;
+    overflow-x: hidden;
 
     margin-top: 1rem;
     margin-bottom: 1rem;
@@ -281,6 +321,10 @@ body {
 }
 
 .notActive {
+    transition: 300ms;
+
+    cursor: pointer;
+
     background-color: white;    
 
     margin-top: 2rem;
@@ -288,10 +332,8 @@ body {
 
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
 
-    width: 601px;
-    height: 74px;
-
-    border: 1px solid red;
+    width: 32rem;
+    height: 5rem;
 
     display: flex;
     align-items: center;
@@ -302,12 +344,64 @@ body {
 
 .notActive h1 {
     margin-top: 0rem;
+
+    font-family: var(--font-family);
+    font-size: var(--font-text-size);
 }
 
 .notActive h2 {
     display: none;
 }
 
+.notActive h3 {
+    display: none;
+}
+
 .notActive input {
     display: none;
+}
+
+.active {
+    transition: 300ms;
+
+    width: 32rem;
+    height: 35rem;
+
+    padding: 1rem 0.5rem;
+
+    background: #FFFFFF;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
+
+    overflow: hidden;
+
+    display: flex;;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.active h1 {
+    margin-top: 0rem;
+
+    font-family: var(--font-family);
+    font-size: var(--font-text-size);
+}
+
+.active h2 {
+    margin-top: 2rem;
+
+    font-family: var(--font-family);
+    font-size: var(--font-text-size);
+
+    display: block;
+}
+
+.active input {
+    display: block;
+
+    margin-top: 1rem;
+
+    height: 45%;
+    width: 30rem;
 }

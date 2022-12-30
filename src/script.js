@@ -59,26 +59,97 @@ function displayPerguntas() {
     const containerPerguntas = document.querySelector(".contentPerguntas")
     containerPerguntas.classList.remove("hide")
 
-    for (let i = 0; i < qtdPerguntaseMyQuizzes.value; i++) {
+    for (let i = 1; i <= qtdPerguntaseMyQuizzes.value; i++) {
         
 
         const newPergunta = document.createElement("div")
-        const h1 = document.createElement("h1")
 
-        
+        const divPerguntas = document.createElement("div")
+        const h1 = document.createElement("h1")
+        const txtPergunta = document.createElement("input")
+        const corPergunta = document.createElement("input")
+
+        const divReposta = document.createElement("div")
+        const h2Resposta = document.createElement("h2")
+        const respostaCorreta = document.createElement("input")
+        const urlrespostaCorreta = document.createElement("input")
+
+        const divRepostaIcorreta1 = document.createElement("div")
+        const h2RespostaIncorreta = document.createElement("h2")
+        const respostaIncorreta1 = document.createElement("input")
+        const urlrespostaIncorreta1 = document.createElement("input")
+
+        const divRepostaIcorreta2 = document.createElement("div")
+        const respostaIncorreta2 = document.createElement("input")
+        const urlrespostaIncorreta2 = document.createElement("input")
+
+        const divRepostaIcorreta3 = document.createElement("div")
+        const respostaIncorreta3 = document.createElement("input")
+        const urlrespostaIncorreta3 = document.createElement("input")
         
 
         h1.innerHTML = 'Pergunta ' + i;
+        h2Resposta.innerHTML = 'Resposta correta';
+        h2RespostaIncorreta.innerHTML = 'Resposta incorreta';
+
+        txtPergunta.placeholder = "Texto da pergunta";
+        corPergunta.placeholder = "Cor de fundo da pergunta";
+        respostaCorreta.placeholder = "Resposta correta";
+        urlrespostaCorreta.placeholder = "URL da imagem";
+        respostaIncorreta1.placeholder = "Resposta incorreta 1";
+        urlrespostaIncorreta1.placeholder = "URL da imagem 1";
+        respostaIncorreta2.placeholder = "Resposta incorreta 2";
+        urlrespostaIncorreta2.placeholder = "URL da imagem 2";
+        respostaIncorreta3.placeholder = "Resposta incorreta 3";
+        urlrespostaIncorreta3.placeholder = "URL da imagem 3";
 
 
-        newPergunta.appendChild(h1) 
 
-        newPergunta.classList.add("notActive")
-        
+
+
+
+        divPerguntas.appendChild(h1) 
+        divPerguntas.appendChild(txtPergunta) 
+        divPerguntas.appendChild(corPergunta) 
+
+        divReposta.appendChild(h2Resposta) 
+        divReposta.appendChild(respostaCorreta) 
+        divReposta.appendChild(urlrespostaCorreta)  
+
+        divRepostaIcorreta1.appendChild(h2RespostaIncorreta)
+        divRepostaIcorreta1.appendChild(respostaIncorreta1)
+        divRepostaIcorreta1.appendChild(urlrespostaIncorreta1) 
+
+        divRepostaIcorreta2.appendChild(respostaIncorreta2)
+        divRepostaIcorreta2.appendChild(urlrespostaIncorreta2)
+
+        divRepostaIcorreta3.appendChild(respostaIncorreta3)
+        divRepostaIcorreta3.appendChild(urlrespostaIncorreta3)
+
+
+        newPergunta.appendChild(divPerguntas)
+        newPergunta.appendChild(divReposta)
+        newPergunta.appendChild(divRepostaIcorreta1)
+        newPergunta.appendChild(divRepostaIcorreta2)
+        newPergunta.appendChild(divRepostaIcorreta3)
+
+
+
+        newPergunta.classList.add("notActive")        
 
         containerPerguntas.appendChild(newPergunta)  
-    } 
 
+        
+        newPergunta.onclick = function () {
+            newPergunta.classList.add("active")
+
+            const activePergunta = querySelectorAll(".active")
+
+            activePergunta.onclick = function () {
+                activePergunta.classList.remove("active")   
+            }
+        };
+    } 
 }
 
 const url = `https://mock-api.driven.com.br/api/v6/buzzquizz/quizzes`
